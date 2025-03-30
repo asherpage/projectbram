@@ -17,3 +17,55 @@ html{
 .mb-more{
     margin-bottom: 5rem;
 }
+.fit-cont{
+    height: fit-content;
+}
+.myh{
+    height: 50vh;
+}
+#one{
+    background-image: url(./images/grandview.jpeg);
+    background-size: cover;
+    background-position: center center;
+}
+#two {
+    background-image: url(./images/Laloma.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+#three {
+    background-image: url(./images/colonnade.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+#four {
+    background-image: url(./images/grandview.jpeg);
+    background-size: cover;
+    background-position: center center;
+}
+
+#five {
+    background-image: url(./images/Laloma.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+#six {
+    background-image: url(./images/colonnade.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.map{
+    height: 600px;
+}
+/* CSS for rotating the arrow when the button is hovered */
+/* CSS for rotating the arrow when the button is hovered */
+.arrow-btn i {
+    transition: transform 0.3s ease;
+    /* Smooth transition for both hover in and hover out */
+}
+
+.arrow-btn:hover i {
+    transform: rotate(-45deg);
+    /* Rotate the arrow to point upwards */
+}
