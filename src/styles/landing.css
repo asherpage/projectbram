@@ -14,6 +14,9 @@ html{
     width: 40%;
 
 }
+.w-85{
+    width: 85%;
+}
 .mb-more{
     margin-bottom: 5rem;
 }
@@ -24,7 +27,7 @@ html{
     height: 50vh;
 }
 #one{
-    background-image: url(./images/grandview.jpeg);
+    background-image: url(./images/grandv.jpg);
     background-size: cover;
     background-position: center center;
 }
@@ -39,19 +42,19 @@ html{
     background-position: center center;
 }
 #four {
-    background-image: url(./images/grandview.jpeg);
+    background-image: url(./images/gate.png);
     background-size: cover;
     background-position: center center;
 }
 
 #five {
-    background-image: url(./images/Laloma.jpg);
+    background-image: url(./images/hors.jpg);
     background-size: cover;
     background-position: center center;
 }
 
 #six {
-    background-image: url(./images/colonnade.jpg);
+    background-image: url(./images/kowal.jpg);
     background-size: cover;
     background-position: center center;
 }
@@ -68,4 +71,26 @@ html{
 .arrow-btn:hover i {
     transform: rotate(-45deg);
     /* Rotate the arrow to point upwards */
+}
+#landingImage{
+    padding: 5rem;
+}
+.my-radius{
+    border-radius: 80px;
+}
+@media only screen and (max-width: 500px) {
+    * {
+        border: 1px solid red;
+    }
+    #ppl{
+        display: none;
+    }
+    #galleryBtn{
+        width: 14rem;
+        padding: 1.5rem 2rem !important;
+        background-color: aqua;
+    }
+    #landing-cont{
+        padding-top: 2rem !important;
+    }
 }
