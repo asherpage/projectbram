@@ -2,8 +2,6 @@ import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/landing.css';
-
-// Import images directly
 import image1 from '../styles/images/Gallery/Commercial1.jpg';// Larger image
 import image2 from '../styles/images/Gallery/Commercial2.jpg'; 
 import image3 from '../styles/images/Gallery/Commercial3.jpg';
@@ -40,7 +38,7 @@ const Slideshow = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fullscreenImage, setFullscreenImage] = useState(null); // State to manage fullscreen image
+  const [fullscreenImage, setFullscreenImage] = useState(null);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
@@ -59,12 +57,12 @@ const Slideshow = () => {
     ];
   };
 
-  // Function to open fullscreen view
+  //open fullscreen view
   const openFullscreen = (imageUrl) => {
     setFullscreenImage(imageUrl);
   };
 
-  // Function to close fullscreen view
+  //close fullscreen view
   const closeFullscreen = () => {
     setFullscreenImage(null);
   };
@@ -98,15 +96,14 @@ const inView = useInView(sectionRef, { once: true, margin: '-200px' });
         >
         <div className="col-12">
           <div className="position-relative">
-            {/* Container for the four images */}
             <motion.div
               className="d-flex justify-content-between"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{
-                duration: 0.8, // Increased duration for smoother transitions
-                ease: [0.25, 0.8, 0.25, 1], // Ease-in-out for smoother feel
+                duration: 0.8,
+                ease: [0.25, 0.8, 0.25, 1],
               }}
             >
               {getVisibleSlides().map((slide) => (
@@ -116,13 +113,13 @@ const inView = useInView(sectionRef, { once: true, margin: '-200px' });
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -100 }}
                   transition={{
-                    duration: 0.8, // Increased duration
-                    ease: [0.25, 0.8, 0.25, 1], // Smooth ease-in-out
+                    duration: 0.8,
+                    ease: [0.25, 0.8, 0.25, 1], 
                   }}
                   className="d-flex justify-content-center align-items-center position-relative p-2"
                   style={{
-                    width: slide.id === 1 || slide.id === 4 || slide.id === 8|| slide.id === 11 ? '48%' : '24%', // Double width for Slide 2 and Slide 3
-                    height: '350px', // Increased height for the images
+                    width: slide.id === 1 || slide.id === 4 || slide.id === 8|| slide.id === 11 ? '48%' : '24%',
+                    height: '350px', 
                     overflow: 'hidden',
                   }}
                 >
@@ -131,10 +128,9 @@ const inView = useInView(sectionRef, { once: true, margin: '-200px' });
                     alt={slide.title}
                     className="w-100 h-100 rounded-3"
                     style={{
-                      objectFit: 'cover', // Ensures images cover the container and maintain aspect ratio
+                      objectFit: 'cover',
                     }}
                   />
-                  {/* Circle Button to trigger fullscreen */}
                   <button
                     onClick={() => openFullscreen(slide.imageUrl)}
                     className="btn btn-light rounded-circle position-absolute p-2 m-2 arrow-btn"
@@ -150,13 +146,13 @@ const inView = useInView(sectionRef, { once: true, margin: '-200px' });
                       padding: 0,
                     }}
                   >
-                    <i className="bi bi-arrow-up-right" style={{ color: '#333' }}></i> {/* Slim arrow */}
+                    <i className="bi bi-arrow-up-right" style={{ color: '#333' }}></i>
                   </button>
                 </motion.div>
               ))}
             </motion.div>
 
-            {/* Navigation Buttons below images */}
+            
             <div className="d-flex justify-content-center mt-3">
               <button
                 onClick={prevSlide}
@@ -184,8 +180,6 @@ const inView = useInView(sectionRef, { once: true, margin: '-200px' });
           </div>
         </div>
       </motion.div>
-
-      {/* Fullscreen Modal */}
       {fullscreenImage && (
         <div
           className="fullscreen-modal position-fixed top-0 start-0 w-100 h-100 bg-black bg-opacity-75 d-flex justify-content-center align-items-center"
@@ -195,23 +189,22 @@ const inView = useInView(sectionRef, { once: true, margin: '-200px' });
           <div
             className="position-relative rounded"
             style={{
-              maxWidth: '70%', // Adjusted width to make it more reasonable
-              maxHeight: '70%', // Adjusted height to avoid being too large
-              overflow: 'hidden', // Prevent overflow
+              maxWidth: '70%',
+              maxHeight: '70%', 
+              overflow: 'hidden',
             }}
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
+            onClick={(e) => e.stopPropagation()}
           >
             <img
               src={fullscreenImage}
               alt="Fullscreen"
               className="w-100 h-100 rounded-3"
               style={{
-                objectFit: 'contain', // Keep the image aspect ratio intact
-                width: '100%', // Ensure the image doesn't exceed the container width
-                height: '100%', // Ensure the image doesn't exceed the container height
+                objectFit: 'contain', 
+                width: '100%', 
+                height: '100%', 
               }}
             />
-            {/* X Button to close fullscreen */}
             <button
               onClick={closeFullscreen}
               className="btn btn-light rounded-circle position-absolute"
